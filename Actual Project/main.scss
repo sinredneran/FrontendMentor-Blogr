@@ -1,0 +1,30 @@
+@import './reset';
+@import './variables';
+@import './footer';
+@import './header';
+@import './middle';
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+body{
+    line-height: 2;
+    background: #fafafa;
+    overflow-x: hidden;
+    @include mobile() {
+        line-height:1.6;
+    }
+}
+.attribution{
+    text-align: center;
+    background: #2a2a2a;
+    color: lightskyblue;
+    padding: 0 1rem;
+    & a{
+        color: $CTA-text;
+        &:hover , &:focus{
+            color: yellowgreen;
+        }
+    }
+}

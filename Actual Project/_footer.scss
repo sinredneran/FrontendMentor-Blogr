@@ -1,0 +1,66 @@
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+footer {
+    font-family: "Ubuntu", sans-serif;
+    background: $footer-bg;
+    border-top-right-radius: $curve;
+    font-weight: 500;
+    & img {
+        margin-bottom: 3rem;
+    }
+
+    .footer__ul {
+        padding: 70px;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        color: $text-color;
+
+        & li {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            //
+            @include mobile {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+// .footer__ul media queries
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+.footer__ul--sub__lists {
+    margin: 1.5rem 0;
+    & a {
+        position: relative;
+        font-weight: 400;
+        color: $footer-text;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            transition: all 150ms ease-in-out;
+            left: 50%;
+            right: 50%;
+            height: 2px;
+            background: white;
+            border-radius: 10px;
+        }
+        &:hover::after{
+            right: 0%;
+            left: 0%;
+        }
+        &:focus::after{
+            right: 0%;
+            left: 0%;    
+        }
+    }
+}
