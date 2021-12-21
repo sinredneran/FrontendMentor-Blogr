@@ -47,6 +47,7 @@ header {
     & .learnMore {
         margin-left: 1rem;
         @include button(#00000000, $text-color);
+        border:none;
         outline: 1px solid white;
         padding: 1rem 1.5rem;
         &:hover,
